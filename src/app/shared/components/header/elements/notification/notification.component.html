@@ -1,0 +1,15 @@
+<div class="notification-box" (click)="toggleNotificationMobile()">
+  <app-feather-icons [icon]="'bell'"></app-feather-icons>
+  <span class="badge badge-pill badge-secondary">{{total}}</span>
+</div>
+<ul *ngIf="isloaded" class="notification-dropdown onhover-show-div" [class.active]="openNotification">
+  <li>
+    <app-feather-icons [icon]="'bell'"></app-feather-icons>
+    <h6 class="f-18 mb-0">Notitications</h6>
+  </li>
+  <li  *ngFor="let result of notif">
+    <p style="text-align: left">
+      <i class="fa fa-circle-o mr-3 font-primary"></i>{{result.name}}
+    </p>
+  </li>
+</ul>
